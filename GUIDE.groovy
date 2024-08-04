@@ -14,29 +14,29 @@ Features
 --------
 Prometheus main features are:
 
--Multi-Dimensional 'data model' with time series data identified by 
+-Multi-Dimensional 'data model' with 'time series data' identified by 
 'metric name and key/value pairs'
--PromQL, a flexible query language to leverage this dimensionality
+-PromQL, 'a flexible query language' to leverage this 'dimensionality'
 -No reliance on distributed storage; 'single server nodes are autonomous'
 -Time series collection happens via a 'pull model' over HTTP
--Pushing time series is supported via an 'intermediary gateway'
+-Pushing 'time series' is supported via an 'intermediary gateway'
 -Targets are discovered via 'service discovery' or static configuration
--Multiple modes of graphing and dashboarding support
+-Multiple modes of 'graphing and dashboarding support'
 
 Most Prometheus components are written in Go, making them easy to build and deploy 
-as static binaries.
+as [[static binaries.]]
 
 
 What Are Metrics?
 ----------------
 
-Metrics are numerical measurements that track changes over time. 
+Metrics are 'numerical measurements' that 'track changes over time.'
 These measurements vary depending on the application. For example, 'web servers might measure 
 request times', while 'databases might measure active connections or queries.'
 
 Metrics help understand 'application performance'. 
-For instance, if a web application is slow, metrics like request count can reveal that high 
-traffic is causing the slowdown, indicating a need for more servers to handle the load.
+For instance, if a web application is slow, metrics like 'request count' can reveal that 'high 
+traffic is causing the slowdown', indicating a need for more servers to handle the load.
 
 Components
 ----------
@@ -54,8 +54,8 @@ The Prometheus ecosystem consists of multiple components, many of which are opti
 Architecture: see architecture.png 
 -------------
 
-Prometheus 'collects metrics' 'from instrumented jobs,' either directly or via a 
-'push gateway' for short-lived jobs. It stores the data locally, processes it to create
+Prometheus 'collects metrics' 'from instrumented jobs,' 'either directly' or via a 
+'push gateway' for short-Lived Jobs. It stores the data locally, processes it to create
 'new time series or alerts', and allows visualization through tools like Grafana.
 
 When Does It Fit?
@@ -64,8 +64,8 @@ When Does It Fit?
 Prometheus excels at recording numeric time series, making it ideal for both machine-centric
 and dynamic service-oriented architectures. It is  particularly strong in microservices
 environments due to its multi-dimensional data collection and querying. 
-Prometheus is designed for reliability, operating independently without requiring network 
-storage or remote services, which makes it a dependable tool during outages.
+Prometheus 'is designed for reliability, operating independently without requiring network 
+storage or remote services, which makes it a dependable tool during outages.'
 
 When Does It Not Fit?
 --------------------
