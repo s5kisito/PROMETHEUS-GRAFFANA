@@ -55,14 +55,14 @@ Architecture: see architecture.png
 -------------
 
 Prometheus 'collects metrics' 'from instrumented jobs,' 'either directly' or via a 
-'push gateway' for short-Lived Jobs. It stores the data locally, processes it to create
-'new time series or alerts', and allows visualization through tools like Grafana.
+'push gateway' for short-Lived Jobs. 'It stores the data locally, processes it to create
+new time series or alerts', and allows 'visualization' through tools like Grafana.
 
 When Does It Fit?
----------------
+----------------
 
-Prometheus excels at recording numeric time series, making it ideal for both machine-centric
-and dynamic service-oriented architectures. It is  particularly strong in microservices
+Prometheus excels at recording 'numeric time series', making it ideal for both 'machine-centric
+and dynamic service-oriented architectures'. It is  particularly strong in microservices
 environments due to its multi-dimensional data collection and querying. 
 Prometheus 'is designed for reliability, operating independently without requiring network 
 storage or remote services, which makes it a dependable tool during outages.'

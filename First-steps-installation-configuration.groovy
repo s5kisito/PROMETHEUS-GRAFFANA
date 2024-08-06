@@ -10,18 +10,18 @@ Before starting Prometheus, let's configure it.'
 2. Configuring Prometheus:
 
 Prometheus configuration is YAML. The Prometheus download comes with a sample configuration 
-in a file called prometheus.yml that is a good place to get started.
+in a file called 'prometheus.yml' that is a good place to get started.
 
 global:
-  scrape_interval:     15s
+  scrape_interval:     15s      # First Block.
   evaluation_interval: 15s
 
 rule_files:
-  # - "first.rules"
+  # - "first.rules"              # Second Block.
   # - "second.rules"
 
 scrape_configs:
-  - job_name: prometheus
+  - job_name: prometheus         # Third Block.
     static_configs:
       - targets: ['localhost:9090'] 
 
@@ -117,13 +117,13 @@ You can experiment with the graph range parameters and other settings.
 Collecting metrics from Prometheus alone is not a great representation of 
 Prometheus capabilities. To get a better sense of what Prometheus can do, 
 we recommend exploring documentation about other exporters. 
-The Monitoring Linux or macOS host metrics using a node exporter guide is a good place to start.
+The Monitoring Linux or MacOS host metrics using a node exporter guide is a good place to start.
 
 https://prometheus.io/docs/guides/node-exporter/
 
 Summary
 -------
 In this guide, you installed Prometheus, configured a Prometheus instance to monitor resources,
- and learned some basics of working with time series data in Prometheus expression browser.
+and learned some basics of working with time series data in Prometheus expression browser.
 To continue learning about Prometheus, check out the Overview for some ideas about what to 
 explore next.
