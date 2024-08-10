@@ -9,7 +9,7 @@ I.Data Model
 ------------
 
 
-1. Metric Names & Labels:
+1. Metric Names & Labels: (Time Series)
 -------------------------
 
 https://prometheus.io/docs/practices/naming/ (BEST PRACTICE)
@@ -31,8 +31,8 @@ same 'metric name', allowing precise identification of specific instances
 '(e.g., HTTP POST requests to the /api/tracks handler).'
 .Its query language supports filtering and aggregation based on these dimensions.
 .Changing any 'labels value, including adding or removing labels,' creates a 'new time series'. 
-.Labels can include ASCII letters, numbers, and underscores, 
-matching the regex [a-zA-Z_][a-zA-Z0-9_]*. 
+.Labels can include 'ASCII letters, numbers, and underscores, 
+matching the regex [a-zA-Z_][a-zA-Z0-9_]*. '
 Label Names starting with __ are reserved for internal use, and label values can contain any 
 Unicode characters. Labels 'with empty values are treated as if they do not exist'
 
@@ -65,13 +65,13 @@ IIi. Metric Types In Prometheus.
 --------------------------------
 --------------------------------
 
-Prometheus client libraries offer four(4) core metric types: Counter, Gauge, Histogram, 
+Prometheus Client Libraries offer four(4) core metric types: Counter, Gauge, Histogram, 
 and Summary.
 
 Counter:
 -------
 
-A cumulative metric that only increases or resets to zero on restart.
+Cumulative metric that only increases or resets to zero on restart.
 Suitable for metrics like requests served or tasks completed.
 Should not be used for values that decrease.
 Client library usage documentation available for Go, Java, Python, Ruby, .Net.
@@ -79,8 +79,8 @@ Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 Gauge:
 -----
 
-Represents a numerical value that can go up or down.
-Used for metrics like temperature or memory usage, and counts that fluctuate.
+Represents a 'numerical value that can go up or down.'
+Used for metrics like 'temperature or memory usage, and counts that fluctuate.'
 Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 
 Histogram:
