@@ -1,7 +1,7 @@
 
 
 Prometheus stores all data as 'time series', consisting of 'timestamped values' for 'specific 
-metrics and labeled dimensions'. In addition to these 'stored time series, it can generate 
+metrics, and labeled dimensions'. In addition to these 'stored time series, it can generate 
 temporary derived time series' in response to 'queries.'
 
 I.Data Model
@@ -65,13 +65,13 @@ IIi. Metric Types In Prometheus.
 --------------------------------
 --------------------------------
 
-Prometheus Client Libraries offer four(4) core metric types: Counter, Gauge, Histogram, 
+Prometheus Client Libraries offer four(4) core 'metric types': Counter, Gauge, Histogram, 
 and Summary.
 
 Counter:
 -------
 
-Cumulative metric that only increases or resets to zero on restart.
+Cumulative 'metric that only increases or resets to zero on restart.'
 Suitable for metrics like requests served or tasks completed.
 Should not be used for values that decrease.
 Client library usage documentation available for Go, Java, Python, Ruby, .Net.
@@ -85,16 +85,16 @@ Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 
 Histogram:
 ----------
-Samples observations (e.g., request durations) and counts them in buckets.
-Provides cumulative counters, a sum of all values, and an event count.
+Samples observations (e.g., request durations) 'and counts them in buckets.'
+Provides 'cumulative counters, a sum of all values, and an event count.'
 Native histograms (experimental in v2.40) use one time series for higher resolution at a lower cost.
 Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 
 Summary:
 -------
 
-Samples observations and provides a count and sum of values.
-Calculates configurable quantiles over a sliding time window.
+Samples observations and provides a 'count and sum of values.'
+Calculates 'configurable quantiles over a sliding time window.'
 Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 Currently, the Prometheus server treats all data as untyped time series, but this may change in the future.
 
@@ -104,10 +104,13 @@ https://prometheus.io/docs/practices/histograms/ (BEST PRACTICE) Histogram & Sum
 
 IIIi: Jobs and Instances in Prometheus:
 
-Instance: An endpoint that Prometheus can scrape, usually corresponding to a single process.
-Job: A collection of instances with the same purpose, such as a replicated process for scalability or reliability.
+Instance: An Endpoint that Prometheus can scrape, usually corresponding to a 'single process.'
+
+Job: A Collection of Instances with the same purpose, such as a 'replicated process' for 
+'scalability or reliability.'
+
 Example:
-An API server job with four instances:
+'An API server job with four instances:'
 
 Job: api-server
 Instance 1: 1.2.3.4:5670
