@@ -59,7 +59,10 @@ scrape_configs:
 # Start Prometheus.
 # By default, Prometheus stores its database in ./data (flag --storage.tsdb.path).
 
-' ./prometheus --config.file=prometheus.yml ' (cd to Prometheus Directory)
+'Cd  Prometheus Directory', Then 
+
+' ./prometheus --config.file=prometheus.yml ' 
+
 
 Checks:
 
@@ -108,8 +111,8 @@ Let add additional targets for Prometheus to scrape.
 The Node Exporter is used as an example target, for more information on using it see 
 these instructions.
 
-tar -xzvf node_exporter-*.*.tar.gz
-cd node_exporter-*.*
+' tar -xzvf node_exporter-*.*.tar.gz '
+' cd node_exporter-*.* '
 
 # Start 3 example targets in separate terminals:
 ./node_exporter --web.listen-address 127.0.0.1:8080

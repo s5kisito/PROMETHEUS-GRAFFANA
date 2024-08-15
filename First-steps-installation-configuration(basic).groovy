@@ -37,7 +37,7 @@ scrape targets.
 You can override this for individual targets. 
 In this case the global setting is to scrape every 15 seconds. 
 '.The evaluation_interval' option controls how often Prometheus will evaluate rules. 
-Prometheus uses rules to create new time series and to generate alerts.
+Prometheus Uses 'rules to create new time series and to generate alerts.'
 
 'The Rule_files block'
 ---------------------

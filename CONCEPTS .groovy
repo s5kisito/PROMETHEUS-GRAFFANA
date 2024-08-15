@@ -86,14 +86,15 @@ Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 Histogram:
 ----------
 Samples observations (e.g., request durations) 'and counts them in buckets.'
-Provides 'cumulative counters, a sum of all values, and an event count.'
-Native histograms (experimental in v2.40) use one time series for higher resolution at a lower cost.
+Provides 'cumulative counters, a sum of all values, and an event count.' 
+Native histograms (experimental in v2.40) use one time series for higher resolution at a 
+lower cost.
 Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 
 Summary:
 -------
 
-Samples observations and provides a 'count and sum of values.'
+Samples observations () and provides a 'count and sum of values.'
 Calculates 'configurable quantiles over a sliding time window.'
 Client library usage documentation available for Go, Java, Python, Ruby, .Net.
 Currently, the Prometheus server treats all data as untyped time series, but this may change in the future.
@@ -103,6 +104,8 @@ https://prometheus.io/docs/practices/histograms/ (BEST PRACTICE) Histogram & Sum
 
 
 IIIi: Jobs and Instances in Prometheus:
+----------------------------------------
+----------------------------------------
 
 Instance: An Endpoint that Prometheus can scrape, usually corresponding to a 'single process.'
 
