@@ -32,7 +32,9 @@ Respective Repositories.
 .Configure and Run them according to their documentation to Integrate 
 with your Prometheus setup.
 
-'NOTE: THIS TYPE OF INSTALLATION IS FROM BINARIES'
+'NOTE: THIS TYPE OF INSTALLATION IS FROM BINARIES' 
+Using Pre-Compiled Binaries.
+-   --    -- --- ---- --- --
 
 
 1.Downloading And Running Prometheus Server.
