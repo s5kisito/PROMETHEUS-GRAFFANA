@@ -1,5 +1,26 @@
 
+
+Command To See Prometheus Flag:
+-------------------------------
 ' ./prometheus -h ' 
+
+Note:
+----
+
+Prometheus can reload its configuration at runtime. If the new configuration is not well-formed
+, the changes will not be applied. 
+
+The Configuration Reload Is Triggered By:
+
+ - Sending a 'SIGHUP' To The Prometheus Process 
+ 
+ -Sending a 'HTTP POST request to the /-/reload endpoint 
+ (when the --web.enable-lifecycle flag is enabled).'
+ This will also reload any Configured Rule Files.
+
+
+
+Command-Line Flags:
 
 Flags:
   -h, --[no-]help                Show context-sensitive help (also try --help-long 
@@ -197,3 +218,14 @@ Flags:
                                  One of: [debug, info, warn, error]
 
       --log.format=logfmt        Output format of log messages. One of: [logfmt, json]
+
+Reload for Command Line -Flag To Apply Changes:
+-----------------------------------------------
+
+' TO APPLY COMMAND LINE FLAGS CHANGES DO ONE OF THE FOLLOWING:'
+
+ - Sending a 'SIGHUP' To The Prometheus Process 
+ 
+ -Sending a 'HTTP POST request to the /-/reload endpoint 
+ (when the --web.enable-lifecycle flag is enabled).'
+ This will also reload any Configured Rule Files.
