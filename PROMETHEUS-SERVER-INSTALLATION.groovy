@@ -13,6 +13,8 @@ This Guide is a "Hello World"-Style Tutorial which shows how to 'install, config
 SEPERATELY'
 https://prometheus.io/download/
 
+List Of Others Components:
+
 Alertmanager: Manages and routes 'alerts' sent by Prometheus.
 Blackbox Exporter: Probes 'endpoints to export metrics' for Prometheus.
 Consul Exporter: Exports metrics from 'Consul' for Prometheus.
