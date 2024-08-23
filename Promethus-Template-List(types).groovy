@@ -60,7 +60,8 @@ This marks the end of the loop.
 Explanation Of The Special '.' Variable:
 
 The '.' (dot) variable in Go templating (which Prometheus templating is based on) refers to the current context or item in the loop. In this case, . represents the current sample returned by the query "up" command.
-{{ .Labels.instance }} accesses the instance label of the current sample, and {{ .Value }} accesses the value (the status, 1 or 0) of the up metric for that instance.
+{{ .Labels.instance }} accesses the instance label of the current sample, and {{ .Value }} 
+accesses the value (the status, 1 or 0) of the up metric for that instance.
 
 What This Code Does:
 This template loops over all instances returned by the up query and prints out each instance
@@ -71,3 +72,62 @@ instance1 1
 instance2 0
 instance3 1
 This output indicates that instance1 and instance3 are up, while instance2 is down.'
+
+
+3. Display One Value:
+
+{{ with query "some_metric{instance='someinstance'}" }}
+  {{ . | first | value | humanize }}
+{{ end }}
+Go templating language are both strongly typed, so one must check that samples were returned
+to avoid an execution error. 
+For example this could happen if a scrape or rule evaluation has not run yet, or a host was 
+down.
+The included prom_query_drilldown template handles this, allows for formatting of results, and linking to the expression browser.
+
+4.Using Console URL Parameters:
+
+{{ with printf "node_memory_MemTotal{job='node',instance='%s'}" .Params.instance | query }}
+  {{ . | first | value | humanize1024 }}B
+{{ end }}
+If accessed as console.html?instance=hostname, .Params.instance will evaluate to hostname.
+
+
+5. Advanced iteration
+
+<table>
+{{ range printf "node_network_receive_bytes{job='node',instance='%s',device!='lo'}" .Params.instance | query | sortByLabel "device"}}
+  <tr><th colspan=2>{{ .Labels.device }}</th></tr>
+  <tr>
+    <td>Received</td>
+    <td>{{ with printf "rate(node_network_receive_bytes{job='node',instance='%s',device='%s'}[5m])" .Labels.instance .Labels.device | query }}{{ . | first | value | humanize }}B/s{{end}}</td>
+  </tr>
+  <tr>
+    <td>Transmitted</td>
+    <td>{{ with printf "rate(node_network_transmit_bytes{job='node',instance='%s',device='%s'}[5m])" .Labels.instance .Labels.device | query }}{{ . | first | value | humanize }}B/s{{end}}</td>
+  </tr>{{ end }}
+</table>
+Here we iterate over all network devices and display the network traffic for each.
+
+As the range action does not specify a variable, .Params.instance is not available inside the
+loop as . is now the loop variable.
+
+6. Defining Reusable Templates:
+Prometheus supports defining templates that can be reused. 
+This is particularly powerful when combined with console library support, 
+allowing sharing of templates across consoles.
+
+{{/* Define the template */}}
+{{define "myTemplate"}}
+  do something
+{{end}}
+
+{{/* Use the template */}}
+{{template "myTemplate"}}
+Templates are limited to one argument. The args function can be used to wrap multiple arguments.
+
+{{define "myMultiArgTemplate"}}
+  First argument: {{.arg0}}
+  Second argument: {{.arg1}}
+{{end}}
+{{template "myMultiArgTemplate" (args 1 2)}}
