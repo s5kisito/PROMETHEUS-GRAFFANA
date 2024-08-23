@@ -87,11 +87,13 @@ Yaml
     description: "{{ $labels.instance }} has a median request latency above 1s (current value: {{ $value }}s)"
 ------------------------------------------------------------------------------------------------------------------------
 
-Purpose: This alert triggers if the median (50th percentile) request latency for an API exceeds 1 second for more than 10 minutes.
+Purpose: This alert triggers if the median (50th percentile) request latency for an API 
+exceeds 1 second for more than 10 minutes.
 
 Templating:
 {{ $labels.instance }}: Inserts The Name Of The Instance Where the 'latency is high.'
 {{ $value }}: Inserts 'the actual median latency value.'
+
 
 Note: 
 

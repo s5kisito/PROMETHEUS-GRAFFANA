@@ -15,8 +15,8 @@ Prometheus Configuration has Three (3) Main "blocks":
 However 'Additional Blocks' Can be added To 'the configuration file'.
 
 
-List Of Additional Configuration And Where To Incorporate Them In The Configuration File:
------------------------------------------------------------------------------------------
+List Of Configurations And Where To Incorporate Them In The Configuration File:
+-------------------------------------------------------------------------------
 '
 
 <tls_config>
