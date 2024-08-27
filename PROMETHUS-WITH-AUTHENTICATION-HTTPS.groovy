@@ -1,7 +1,10 @@
 https://github.com/prometheus/prometheus/blob/release-2.54/documentation/examples/web-config.yml
 (Basic-Example)
-
+Prometheus supports basic 'authentication and TLS.'
 Prometheus Can Be Secured Using 'HTTPS and basic authentication.'
+
+'The file is read upon every http request, such as any change in the configuration and 
+the certificates is picked up immediately.'
 
  The support for these features is experimental, meaning it could change in future versions. 
  The Security Settings are configured using a
