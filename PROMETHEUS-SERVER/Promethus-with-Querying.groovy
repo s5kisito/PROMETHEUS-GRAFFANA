@@ -9,7 +9,8 @@ time series data in real-time.' The results can be displayed as 'graphs', viewed
 
 1.Expression Language Data Types:
 
-In Prometheuss expression language, an expression or sub-expression can evaluate to one of four types:
+In Prometheuss expression language, an expression or sub-expression can evaluate to one of 
+four types:
 
 .Instant Vector:  Set Of Time Series Containing a 'single sample' for 'each time series,
  all sharing the same timestamp'
@@ -24,10 +25,11 @@ each time series'
 2.1: String Literals:
 
 String literals in PromQL can be enclosed in 'single quotes, double quotes, or backticks.'
- Single And double-Quoted Strings Use 'backslashes for escape sequences, similar to Go, 
+
+ .Single And double-Quoted Strings Use 'backslashes for escape sequences, similar to Go, 
 allowing special characters and notations like octal or hexadecimal.'
 
-In Contrast, Strings Within 'backticks do not parse escape characters, and newlines are 
+ .In Contrast, Strings Within 'backticks do not parse escape characters, and newlines are 
 preserved. Examples include:
 '
 
